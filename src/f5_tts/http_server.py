@@ -159,7 +159,7 @@ f5tts = F5TTS(model_type="E2-TTS")
 @app.route('/tts/infer', methods=['POST'])
 def infer():
 	data = request.json
-	ref_file = '/home/ec2-user/workspace/f5_ref_audio/' + data.get('ref_audio')
+	ref_file = '/home/ec2-user/workspace/f5_ref_audio/' + data.get('ref_audio') + ".wav"
 	ref_text = data.get('ref_text')
 	gen_text = data.get('gen_text')
 	seed = data.get('seed', -1)
