@@ -154,7 +154,7 @@ class F5TTS:
         return wav, sr, spect
 
 app = Flask(__name__)
-f5tts = F5TTS()
+f5tts = F5TTS(model_type="E2-TTS")
 
 @app.route('/tts/infer', methods=['POST'])
 def infer():
